@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock Using JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="display">
+            <div id="timer"></div>
+        </div>
+    </div>
+    
+
+
+    <script>
+        setInterval(()=>{
+            const time = document.querySelector('#timer');
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds= date.getSeconds();
+        // let hours = let.gethours();
+        let day_night = "AM";
+        if(hours>12)
+        {
+            hours= hours-12;
+            let day_night = "PM";
+        }
+        if(hours<10)
+        {
+            hours= "0"+hours;
+        }
+        if(minutes<10)
+        {
+            minutes= "0"+ minutes;
+        }
+        if(seconds<10)
+        {
+            seconds= "0"+ seconds;
+        }
+        time.textContent = hours + ":" + minutes +":" + seconds + " "+day_night;
+        
+        })
+    </script>
+</body>
+</html>
